@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.eggs/
+dist/
+build/
+*.egg-info/
+.env
+.env.*
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Test output
+htmlcov/
+.coverage
+.tox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Others
+*.sqlite3
+*.db
+
+# System
+Thumbs.db
+
+# Ignore local files
+local_settings.py
