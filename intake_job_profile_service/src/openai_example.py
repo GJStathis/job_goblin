@@ -4,13 +4,10 @@ import os
 from dotenv import load_dotenv
 import numpy as np
 import sounddevice as sd
-from src.voice_agent import IntakeJobProfileAgent
-from agents.voice import AudioInput, SingleAgentVoiceWorkflow, VoicePipeline
+
 
 async def main():
-    load_dotenv()
-    print("API keys loaded!")
-    pipeline = VoicePipeline(workflow=SingleAgentVoiceWorkflow(IntakeJobProfileAgent().agent))
+    pipeline = VoicePipeline(workflow=SingleAgentVoiceWorkflow(agent))
     buffer = np.zeros(24000 * 3, dtype=np.int16)
     audio_input = AudioInput(buffer=buffer)
 
