@@ -1,29 +1,14 @@
 import asyncio
-import random
-import os
 from dotenv import load_dotenv
-import numpy as np
-import sounddevice as sd
-from src.voice_agent import IntakeJobProfileAgent
-from agents.voice import AudioInput, SingleAgentVoiceWorkflow, VoicePipeline
+from src.profiler_agent import profiler_agent
+from agents import Agent, Runner
 
 async def main():
     load_dotenv()
     print("API keys loaded!")
-    pipeline = VoicePipeline(workflow=SingleAgentVoiceWorkflow(IntakeJobProfileAgent().agent))
-    buffer = np.zeros(24000 * 3, dtype=np.int16)
-    audio_input = AudioInput(buffer=buffer)
-
-    result = await pipeline.run(audio_input)
-
-    # Create an audio player using `sounddevice`
-    player = sd.OutputStream(samplerate=24000, channels=1, dtype=np.int16)
-    player.start()
-
-    # Play the audio stream as it comes in
-    async for event in result.stream():
-        if event.type == "voice_stream_event_audio":
-            player.write(event.data)
+    print ("Starting Profiler Agent...")
+    result = Runner.run_sync(profiler_agent, "Create a job profile for a software developer")
+    print("Profiler Agent result:", result)
 
 
 if __name__ == "__main__":
