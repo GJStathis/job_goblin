@@ -1,5 +1,4 @@
-from openai import OpenAI
-from openai_agents import Agent, WebSearchTool, function_tool
+from agents import Agent, WebSearchTool, function_tool
 
 @function_tool
 def save_results(output):
