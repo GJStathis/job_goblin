@@ -1,0 +1,11 @@
+*.pyc
+.env
+local/
+
+.venv/
+.ruff_cache/
+.mypy_cache/
+*.db
+*.rdb
+
+.DS_Store

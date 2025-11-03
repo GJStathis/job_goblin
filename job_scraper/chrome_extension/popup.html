@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Page Saver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Job Page Saver</h1>
+    <p id="api_connection_status"></p>
+
+    <form id="saveForm">
+      <div class="form-group">
+        <label for="urlInput">Job Page URL (optional)</label>
+        <input type="text" id="urlInput" placeholder="Leave blank to use current page" autocomplete="off">
+      </div>
+
+      <button type="submit" id="submitBtn">Save Job Page</button>
+    </form>
+
+    <div id="status" class="status hidden"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
